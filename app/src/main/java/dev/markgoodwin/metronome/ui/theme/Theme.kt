@@ -10,6 +10,22 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.font.Font
+import androidx.compose.material3.Typography
+import androidx.compose.ui.text.TextStyle
+import dev.markgoodwin.metronome.R
+
+private val LatoFontFamily = FontFamily(
+    Font(R.font.lato_regular, FontWeight.Normal)
+)
+
+private val CustomTypography = Typography(
+    displayLarge = TextStyle(fontFamily = LatoFontFamily),
+    displayMedium = TextStyle(fontFamily = LatoFontFamily),
+    displaySmall = TextStyle(fontFamily = LatoFontFamily),
+)
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -52,7 +68,7 @@ fun MetronomeTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
+        typography = CustomTypography,
         content = content
     )
 }
